@@ -1,0 +1,56 @@
+export const PAYMENT_METHODS = {
+    BKASH: {
+        name: "bKash",
+        type: "Personal",
+        number: "017XXXXXXXX",
+        instructions: [
+            "Open your bKash app or dial *247#",
+            "Choose 'Send Money' option",
+            "Enter our bKash number: 017XXXXXXXX",
+            "Enter the exact amount mentioned below",
+            "After successful payment, copy the Transaction ID (TrxID) and paste it here",
+        ],
+        logo: "/payments/bkash.png",
+    },
+    ROCKET: {
+        name: "Rocket",
+        type: "Personal",
+        number: "019XXXXXXXX-X",
+        instructions: [
+            "Open your Rocket app or dial *322#",
+            "Choose 'Send Money' option",
+            "Enter our Rocket number: 019XXXXXXXX-X",
+            "Enter the exact amount mentioned below",
+            "After successful payment, copy the Transaction ID and paste it here",
+        ],
+        logo: "/payments/rocket.png",
+    },
+    NAGAD: {
+        name: "Nagad",
+        type: "Personal",
+        number: "018XXXXXXXX",
+        instructions: [
+            "Open your Nagad app or dial *167#",
+            "Choose 'Send Money' option",
+            "Enter our Nagad number: 018XXXXXXXX",
+            "Enter the exact amount mentioned below",
+            "After successful payment, copy the Transaction ID and paste it here",
+        ],
+        logo: "/payments/nagad.png",
+    },
+    BANK_TRANSFER: {
+        name: "Bank Transfer",
+        bankName: "Dutch-Bangla Bank Ltd.",
+        accountName: "Dr. Abu Hanif Clinic",
+        accountNumber: "123.456.7890",
+        branch: "Dhanmondi Branch",
+        routingNumber: "090261xxx",
+        instructions: [
+            "Transfer the amount to the bank account provided above",
+            "You can use mobile banking apps (CityTouch, NEXUSPay, etc.) or visit a branch",
+            "Use your Name or Appointment Date as Reference",
+            "Enter the Transaction ID or Reference Number below after payment",
+        ],
+        logo: "/payments/bank.png",
+    },
+};

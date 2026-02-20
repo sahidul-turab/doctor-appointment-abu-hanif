@@ -2,14 +2,14 @@ import BookingFlow from "@/components/BookingFlow";
 import prisma from "@/lib/prisma";
 
 export default async function BookPage() {
-    let services = [];
+    let services: any[] = [];
     try {
         services = await prisma.service.findMany({
             where: { isActive: true },
             select: { id: true, name: true, fee: true, duration: true }
         });
-    } catch (e) {
-        console.error("Prisma error in BookPage:", e);
+    } catch (error) {
+        console.error("Prisma error in BookPage:", error);
     }
 
     return (

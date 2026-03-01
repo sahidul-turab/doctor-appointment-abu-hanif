@@ -12,10 +12,5 @@ export const getWhatsAppUrl = (number?: string, message?: string) => {
     return `https://wa.me/${phoneNumber}${encodedMessage ? `?text=${encodedMessage}` : ""}`;
 };
 
-export const WHATSAPP_MESSAGE_TEMPLATE = `ডা. আবু হানিফ স্যারের অ্যাপয়েন্টমেন্ট নিতে নিচের নম্বরে ৫১০ টাকা বিকাশ করুন:
-
-📱 বিকাশ নম্বর: ০১৬৭৩১২৯৫২৮
-
-পেমেন্ট সম্পন্ন হলে একটি কনফার্মেশন মেসেজ পাঠান।
-ডা. আবু হানিফ স্যার খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।`;
+export const WHATSAPP_MESSAGE_TEMPLATE = `ডা. আবু হানিফ স্যারের অ্যাপয়েন্টমেন্ট নিতে চাই। অনুগ্রহ করে বিস্তারিত জানাবেন।`;
 

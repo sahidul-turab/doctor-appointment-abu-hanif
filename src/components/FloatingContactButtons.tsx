@@ -2,7 +2,7 @@
 
 import { LucideMessageCircle, LucidePhone } from "lucide-react";
 import { useState, useEffect } from "react";
-import { clsx } from "clsx";
+import { getWhatsAppUrl, WHATSAPP_MESSAGE_TEMPLATE } from "@/lib/whatsapp";
 
 export default function FloatingContactButtons() {
     const [mounted, setMounted] = useState(false);
@@ -13,17 +13,8 @@ export default function FloatingContactButtons() {
 
     if (!mounted) return null;
 
-    const phoneNumber = "8801673129528";
-    const waMessage = `ডা. আবু হানিফ স্যারের অ্যাপয়েন্টমেন্ট নিতে নিচের নম্বরে ৫১০ টাকা বিকাশ করুন:
-
-📱 বিকাশ নম্বর: ০১৬৭৩১২৯৫২৮
-
-পেমেন্ট সম্পন্ন হলে একটি কনফার্মেশন মেসেজ পাঠান।
-ডা. আবু হানিফ স্যার খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন।`;
-
-    const encodedMessage = encodeURIComponent(waMessage);
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    const callUrl = `tel:+${phoneNumber}`;
+    const waUrl = getWhatsAppUrl(undefined, WHATSAPP_MESSAGE_TEMPLATE);
+    const callUrl = waUrl; // Both redirect to WhatsApp as per requirement
 
     return (
         <div
@@ -56,13 +47,13 @@ export default function FloatingContactButtons() {
             {/* Call Button (Bottom) */}
             <div className="group relative flex items-center justify-center">
                 <span className="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-[var(--card)] border border-[var(--border)] text-[var(--text)] text-sm font-semibold rounded-xl opacity-0 md:group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block shadow-2xl z-[100000]">
-                    Call Dr. Abu Hanif
+                    WhatsApp Call
                 </span>
 
                 <a
                     href={callUrl}
                     className="flex items-center justify-center w-[52px] h-[52px] md:w-[64px] md:h-[64px] bg-white text-[#10b981] rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.15)] border border-[var(--border)] hover:scale-110 active:scale-95 transition-all duration-300"
-                    aria-label="Call Dr. Abu Hanif"
+                    aria-label="Call Dr. Abu Hanif on WhatsApp"
                 >
                     <LucidePhone className="w-6 h-6 md:w-7 md:h-7 fill-current" />
                 </a>

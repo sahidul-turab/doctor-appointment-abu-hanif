@@ -39,7 +39,7 @@ export default function SimpleHomePage() {
             doctorName: "Dr. Abu Hanif",
             specialization: "Medicine & Cardiology Specialist",
             degrees: [
-                "MBBS (MMC), D-Card (BSMMU)",
+                "MBBS (MMC), D-Card (BMU)",
                 "FCPS (Cardiology – Part-I)"
             ],
             heroPromise: "Expert care for your heart and general health. 15+ years of experience in helping patients lead healthier lives.",
@@ -78,7 +78,7 @@ export default function SimpleHomePage() {
             doctorName: "ডা. আবু হানিফ",
             specialization: "মেডিসিন ও কার্ডিওলজি বিশেষজ্ঞ",
             degrees: [
-                "এমবিবিএস (এমএমসি), ডি-কার্ড (বিএসএমএমইউ)",
+                "এমবিবিএস (এমএমসি), ডি-কার্ড (বিএমইউ)",
                 "এফসিপিএস (কার্ডিওলজি – পার্ট-I)"
             ],
             heroPromise: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা প্রদান। রোগীদের সুস্থ, নিরাপদ ও স্বাভাবিক জীবনে ফিরিয়ে আনাই আমার অঙ্গীকার।",

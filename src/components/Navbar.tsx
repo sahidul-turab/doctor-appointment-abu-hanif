@@ -28,7 +28,7 @@ export default function Navbar() {
     const translations = {
         EN: {
             home: "Home",
-            about: "About Dr. Abu Hanif",
+            about: "Dr. Abu Hanif",
             booking: "Booking",
             expert: "Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
             doctorName: "Dr. Abu Hanif",
@@ -38,7 +38,7 @@ export default function Navbar() {
         },
         BN: {
             home: "হোম",
-            about: "ডা. আবু হানিফ সম্পর্কে",
+            about: "ডা. আবু হানিফ",
             booking: "বুকিং",
             expert: "Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
             doctorName: "ডা. আবু হানিফ",
@@ -80,19 +80,19 @@ export default function Navbar() {
         )}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center">
-                    <a href="#hero" onClick={(e) => scrollToSection(e, "#hero")} className="flex items-center space-x-5 group">
-                        <div className="w-12 h-12 bg-[var(--primary)] rounded-full flex items-center justify-center text-white transition-all shadow-2xl shadow-[var(--primary)]/30 group-hover:scale-105">
-                            <LucideHeartPulse className="w-6 h-6" />
+                    <a href="#hero" onClick={(e) => scrollToSection(e, "#hero")} className="flex items-center space-x-3 md:space-x-5 group shrink-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-[var(--primary)] rounded-full flex items-center justify-center text-white transition-all shadow-2xl shadow-[var(--primary)]/30 group-hover:scale-105">
+                            <LucideHeartPulse className="w-5 h-5 md:w-6 md:h-6" />
                         </div>
-                        <div className="flex flex-col">
-                            <span className="text-2xl font-black tracking-tight text-[var(--text)] leading-none italic drop-shadow-sm">{translations[language].doctorName || "Dr. Abu Hanif"}</span>
-                            <span className="text-[10px] font-black text-[var(--primary)] uppercase tracking-[0.3em] mt-1.5 opacity-80 leading-tight">
-                                <span className="hidden md:inline">{t.expert}</span>
-                                <span className="flex flex-col md:hidden">
+                        <div className="flex flex-col justify-center">
+                            <span className="text-lg md:text-2xl font-black tracking-tight text-[var(--text)] leading-none italic drop-shadow-sm whitespace-nowrap">{translations[language].doctorName || "Dr. Abu Hanif"}</span>
+                            <div className="text-[9px] md:text-[10px] font-black text-[var(--primary)] uppercase tracking-[0.15em] md:tracking-[0.3em] mt-1 md:mt-1.5 opacity-80 leading-tight">
+                                <span className="hidden md:inline whitespace-nowrap">{t.expert}</span>
+                                <div className="md:hidden flex flex-col">
                                     <span>Cardiologist</span>
                                     <span>হৃদরোগ বিশেষজ্ঞ</span>
-                                </span>
-                            </span>
+                                </div>
+                            </div>
                         </div>
                     </a>
 
@@ -167,42 +167,21 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Mobile Header Controls */}
-                    <div className="flex items-center space-x-1.5 md:hidden">
-                        {/* Compact Toggles - Always visible on mobile header now */}
-                        <div className="flex items-center space-x-1">
-                            {/* Theme Toggle Mobile Header */}
-                            <div className="flex items-center bg-[var(--card)] border border-[var(--border)] rounded-xl p-0.5 shadow-sm scale-90">
-                                <button
-                                    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                                    className="px-2 py-1 rounded-lg text-[9px] font-black text-[var(--primary)]"
-                                >
-                                    {theme === "dark" ? t.dark : t.light}
-                                </button>
-                            </div>
-                            {/* Language Toggle Mobile Header */}
-                            <div className="flex items-center bg-[var(--card)] border border-[var(--border)] rounded-xl p-0.5 shadow-sm scale-90">
-                                <button
-                                    onClick={() => toggleLanguage()}
-                                    className="px-2 py-1 rounded-lg text-[9px] font-black text-[var(--primary)]"
-                                >
-                                    {language}
-                                </button>
-                            </div>
-                        </div>
-
+                    {/* Mobile Header Menu Button */}
+                    <div className="flex items-center md:hidden space-x-2">
                         {/* Booking CTA on Mobile Header */}
                         <a
                             href="#booking"
                             onClick={(e) => scrollToSection(e, "#booking")}
-                            className="flex items-center px-4 py-2 bg-[var(--primary)] text-white rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-[var(--primary)]/20 active:scale-95 transition-all truncate"
+                            className="flex items-center px-4 py-2 bg-[var(--primary)] text-white rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-[var(--primary)]/20 active:scale-95 transition-all"
                         >
                             {t.booking}
                         </a>
 
                         <button
                             onClick={toggleMenu}
-                            className="p-2.5 rounded-xl bg-[var(--card)] text-[var(--text)] border border-[var(--border)] ml-1"
+                            className="p-2.5 rounded-xl bg-[var(--card)] text-[var(--text)] border border-[var(--border)] active:scale-95 transition-all"
+                            aria-label="Toggle Menu"
                         >
                             {isOpen ? <LucideX className="w-6 h-6" /> : <LucideMenu className="w-6 h-6" />}
                         </button>

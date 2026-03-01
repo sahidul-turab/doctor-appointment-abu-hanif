@@ -38,7 +38,10 @@ export default function SimpleHomePage() {
         EN: {
             doctorName: "Dr. Abu Hanif",
             specialization: "Medicine & Cardiology Specialist",
-            degrees: "MBBS (MMC), D-Card (BMU), FCPS (P-I)",
+            degrees: [
+                "MBBS (MMC), D-Card (BSMMU)",
+                "FCPS (Cardiology – Part-I)"
+            ],
             heroPromise: "Expert care for your heart and general health. 15+ years of experience in helping patients lead healthier lives.",
             primaryDegrees: [
                 "MBBS (MMC) • D-Card (BMU – Former PG Hospital)",
@@ -49,7 +52,7 @@ export default function SimpleHomePage() {
                 "Medical Officer – National Institute of Cardiovascular Diseases (NICVD), Dhaka"
             ],
             bookWhatsApp: "Consult the Doctor Online",
-            aboutTitle: "About Dr. Abu Hanif",
+            aboutTitle: "Dr. Abu Hanif",
             aboutSubtitle: "Cardiologist | NICVD, Dhaka",
             aboutParagraphs: [
                 "I am a dedicated and career-oriented physician with an MBBS degree from Mymensingh Medical College. I completed my Postgraduate Degree in Cardiology (D-Card) from Dhaka Medical College, accredited by Bangladesh Medical University (BMU).",
@@ -74,7 +77,10 @@ export default function SimpleHomePage() {
         BN: {
             doctorName: "ডা. আবু হানিফ",
             specialization: "মেডিসিন ও কার্ডিওলজি বিশেষজ্ঞ",
-            degrees: "এমবিবিএস (এমএমসি), ডি-কার্ড (বিএমইউ), এফসিপিএস (পার্ট-১)",
+            degrees: [
+                "এমবিবিএস (এমএমসি), ডি-কার্ড (বিএসএমএমইউ)",
+                "এফসিপিএস (কার্ডিওলজি – পার্ট-I)"
+            ],
             heroPromise: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা প্রদান। রোগীদের সুস্থ, নিরাপদ ও স্বাভাবিক জীবনে ফিরিয়ে আনাই আমার অঙ্গীকার।",
             primaryDegrees: [
                 "এমবিবিএস (এমএমসি) • ডি-কার্ড (বিএমইউ – সাবেক পিজি হাসপাতাল)",
@@ -85,8 +91,8 @@ export default function SimpleHomePage() {
                 "মেডিকেল অফিসার – ন্যাশনাল ইনস্টিটিউট অব কার্ডিওভাসকুলার ডিজিজেস (এনআইসিভিডি), ঢাকা"
             ],
             bookWhatsApp: "অনলাইনে ডাক্তারের পরামর্শ পেতে ক্লিক করুন",
-            aboutTitle: "ডা. আবু হানিফ সম্পর্কে",
-            aboutSubtitle: "কার্ডিওলোজিস্ট | এনআইসিভিডি, ঢাকা",
+            aboutTitle: "ডা. আবু হানিফ",
+            aboutSubtitle: "কার্ডিওলজিস্ট | এনআইসিভিডি, ঢাকা",
             aboutParagraphs: [
                 "আমি একজন নিবেদিতপ্রাণ ও পেশাগতভাবে প্রতিশ্রুতিবদ্ধ চিকিৎসক। ময়মনসিংহ মেডিকেল কলেজ থেকে এমবিবিএস সম্পন্ন করার মাধ্যমে আমার চিকিৎসা জীবনের সূচনা। পরবর্তীতে ঢাকার ডি-কার্ড (কার্ডিওলজি) ডিগ্রি অর্জন করি, যা বাংলাদেশ মেডিকেল ইউনিভার্সিটি কর্তৃক স্বীকৃত।",
                 "বর্তমানে আমি এফসিপিএস (কার্ডিওলজি) প্রশিক্ষণে নিয়োজিত এবং এনআইসিভিডি, ঢাকায় মেডিকেল অফিসার হিসেবে দায়িত্ব পালন করছি। আমার ক্লিনিক্যাল ফোকাস হলো কার্ডিওভাসকুলার রোগীর ব্যবস্থাপনা, তীব্র হৃদরোগ চিকিৎসা এবং প্রমাণভিত্তিক কার্ডিওলজি চর্চা।"
@@ -131,7 +137,11 @@ export default function SimpleHomePage() {
                             />
                             <div className="absolute bottom-4 left-4 right-4 p-4 bg-[var(--card)]/90 backdrop-blur-xl rounded-2xl border border-[var(--border)] shadow-lg text-center">
                                 <h3 className="text-lg font-black text-[var(--text)] leading-tight">{content.doctorName}</h3>
-                                <p className="text-[9px] font-black text-[var(--primary)] uppercase tracking-wider mt-1">{content.degrees}</p>
+                                <div className="text-[10px] md:text-[9px] font-black text-[var(--primary)] uppercase tracking-wider mt-1 leading-tight flex flex-col">
+                                    {content.degrees.map((line: string, i: number) => (
+                                        <span key={i}>{line}</span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

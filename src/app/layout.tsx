@@ -21,8 +21,31 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const metadata: Metadata = {
-    title: "Dr. Abu Hanif | Professional Medical Consultations",
-    description: "Book online or chamber consultations with Dr. Abu Hanif. Specialized in cardiology and general medicine.",
+    title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+    description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
+    openGraph: {
+        title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+        description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
+        url: "https://dr-abu-hanif.vercel.app/",
+        siteName: "ডা. আবু হানিফ",
+        images: [
+            {
+                url: "https://dr-abu-hanif.vercel.app/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "ডা. আবু হানিফ - কার্ডিওলজি বিশেষজ্ঞ",
+            },
+        ],
+        locale: "bn_BD",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+        description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
+        images: ["https://dr-abu-hanif.vercel.app/og-image.jpg"],
+    },
+    metadataBase: new URL("https://dr-abu-hanif.vercel.app/"),
 };
 
 export default function RootLayout({

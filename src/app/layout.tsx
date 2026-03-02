@@ -21,10 +21,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const metadata: Metadata = {
-    title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+    title: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
     description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
     openGraph: {
-        title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+        title: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
         description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
         url: "https://dr-abu-hanif.vercel.app/",
         siteName: "ডা. আবু হানিফ",
@@ -33,7 +33,8 @@ export const metadata: Metadata = {
                 url: "https://dr-abu-hanif.vercel.app/og-final-version%20(1).png",
                 width: 1200,
                 height: 630,
-                alt: "ডা. আবু হানিফ - কার্ডিওলজি বিশেষজ্ঞ",
+                alt: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
+                type: "image/png",
             },
         ],
         locale: "bn_BD",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "ডা. আবু হানিফ | কার্ডিওলজি বিশেষজ্ঞ",
+        title: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
         description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
         images: ["https://dr-abu-hanif.vercel.app/og-final-version%20(1).png"],
     },

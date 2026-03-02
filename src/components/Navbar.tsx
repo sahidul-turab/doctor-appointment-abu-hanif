@@ -5,6 +5,7 @@ import { LucideMenu, LucideX, LucidePhone, LucideCalendar, LucideLanguages, Luci
 import { clsx } from "clsx";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
+import * as gtag from "@/lib/gtag";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -55,8 +56,17 @@ export default function Navbar() {
         { label: t.about, href: "#about" },
     ];
 
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const trackBooking = (location: string) => {
+        gtag.event({
+            action: "click_booking",
+            category: "Engagement",
+            label: `Booking Button - ${location}`,
+        });
+    };
+
+    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, location?: string) => {
         e.preventDefault();
+        if (location) trackBooking(location);
         const element = document.querySelector(href);
         if (element) {
             const offset = 100; // Adjust for sticky header
@@ -161,7 +171,7 @@ export default function Navbar() {
                                 </div>
                             </div>
 
-                            <a href="#booking" onClick={(e) => scrollToSection(e, "#booking")} className="flex items-center px-6 py-2.5 bg-[var(--text)] text-[var(--bg)] rounded-xl text-[12px] font-bold uppercase tracking-[0.1em] hover:bg-[var(--primary)] transition-all active:scale-95 shadow-xl shadow-black/5 shrink-0">
+                            <a href="#booking" onClick={(e) => scrollToSection(e, "#booking", "Navbar Desktop")} className="flex items-center px-6 py-2.5 bg-[var(--text)] text-[var(--bg)] rounded-xl text-[12px] font-bold uppercase tracking-[0.1em] hover:bg-[var(--primary)] transition-all active:scale-95 shadow-xl shadow-black/5 shrink-0">
                                 {t.booking}
                             </a>
                         </div>
@@ -172,7 +182,7 @@ export default function Navbar() {
                         {/* Booking CTA on Mobile Header */}
                         <a
                             href="#booking"
-                            onClick={(e) => scrollToSection(e, "#booking")}
+                            onClick={(e) => scrollToSection(e, "#booking", "Navbar Mobile Header")}
                             className="flex items-center px-4 py-2 bg-[var(--primary)] text-white rounded-lg text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-[var(--primary)]/20 active:scale-95 transition-all"
                         >
                             {t.booking}
@@ -253,7 +263,7 @@ export default function Navbar() {
                     ))}
                     <a
                         href="#booking"
-                        onClick={(e) => scrollToSection(e, "#booking")}
+                        onClick={(e) => scrollToSection(e, "#booking", "Navbar Mobile Menu")}
                         className="block text-[18px] font-semibold text-[var(--text)] tracking-tight leading-[1.6] hover:text-[var(--primary)] transition-colors"
                     >
                         {t.booking}
@@ -261,7 +271,7 @@ export default function Navbar() {
                     <div className="pt-6 border-t border-[var(--border)] flex flex-col space-y-4">
                         <a
                             href="#booking"
-                            onClick={(e) => scrollToSection(e, "#booking")}
+                            onClick={(e) => scrollToSection(e, "#booking", "Navbar Mobile CTA")}
                             className="w-full text-center py-5 bg-[var(--primary)] text-white rounded-2xl font-black text-lg shadow-xl"
                         >
                             {t.booking}

@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { LucideHeartPulse, LucideFacebook, LucideYoutube } from "lucide-react";
+import * as gtag from "@/lib/gtag";
 
 export default function Footer() {
     const { language } = useLanguage();
@@ -107,7 +108,7 @@ export default function Footer() {
                         </div>
                         <ul className="space-y-4">
                             <li><a href="#hero" className="text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors">{t.home}</a></li>
-                            <li><a href="#booking" className="text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors">{t.booking}</a></li>
+                            <li><a href="#booking" onClick={() => gtag.event({ action: "click_booking", category: "Engagement", label: "Footer Quick Link" })} className="text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors">{t.booking}</a></li>
                             <li><a href="#about" className="text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors">{t.about}</a></li>
                             <li><a href="#about" className="text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--primary)] transition-colors">{t.interests}</a></li>
                         </ul>

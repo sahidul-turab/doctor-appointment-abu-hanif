@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
 import { Baloo_Da_2 } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/Providers";
+import { Suspense } from "react";
+import GoogleAnalyticsTracker from "@/components/GoogleAnalyticsTracker";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContactButtons from "@/components/FloatingContactButtons";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const balooDa2 = Baloo_Da_2({
     subsets: ["bengali", "latin"],
@@ -68,6 +73,34 @@ export default function RootLayout({
                     <Analytics />
                 </Providers>
                 <FloatingContactButtons />
+
+                <Suspense fallback={null}>
+                    <GoogleAnalyticsTracker />
+                </Suspense>
+
+                {/* Google Analytics Integration */}
+                {GA_MEASUREMENT_ID && (
+                    <>
+                        <Script
+                            strategy="afterInteractive"
+                            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+                        />
+                        <Script
+                            id="gtag-init"
+                            strategy="afterInteractive"
+                            dangerouslySetInnerHTML={{
+                                __html: `
+                                    window.dataLayer = window.dataLayer || [];
+                                    function gtag(){dataLayer.push(arguments);}
+                                    gtag('js', new Date());
+                                    gtag('config', '${GA_MEASUREMENT_ID}', {
+                                        page_path: window.location.pathname,
+                                    });
+                                `,
+                            }}
+                        />
+                    </>
+                )}
             </body>
         </html>
     );

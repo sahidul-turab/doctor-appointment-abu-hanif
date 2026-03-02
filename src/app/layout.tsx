@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         siteName: "ডা. আবু হানিফ",
         images: [
             {
-                url: "https://dr-abu-hanif.vercel.app/og-final-version%20(1).png",
+                url: "https://dr-abu-hanif.vercel.app/og-banner.png",
                 width: 1200,
                 height: 630,
                 alt: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "ডা. আবু হানিফ | Cardiologist (হৃদরোগ বিশেষজ্ঞ)",
         description: "১৫+ বছরের অভিজ্ঞতায় হৃদরোগ ও সাধারণ স্বাস্থ্যসেবায় দক্ষ চিকিৎসা।",
-        images: ["https://dr-abu-hanif.vercel.app/og-final-version%20(1).png"],
+        images: ["https://dr-abu-hanif.vercel.app/og-banner.png"],
     },
     metadataBase: new URL("https://dr-abu-hanif.vercel.app/"),
 };

@@ -4,6 +4,7 @@ import "./globals.css";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/Providers";
 
 import Navbar from "@/components/Navbar";
@@ -64,6 +65,7 @@ export default function RootLayout({
                     <Navbar />
                     <main className="relative">{children}</main>
                     <Footer />
+                    <Analytics />
                 </Providers>
                 <FloatingContactButtons />
             </body>

@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  --font-sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --primary: #004ecc;
+  --primary-hover: #003da1;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.theme-light {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --ring: rgba(37, 99, 235, 0.1);
+}
+
+.theme-dark {
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --bg: #020617;
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --card: #0f172a;
+  --border: #1e293b;
+  --ring: rgba(96, 165, 250, 0.1);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force Segoe UI on all elements except when Bangla is active */
+*:not(.lang-bn, .lang-bn *) {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Global Font Overrides for Bangla */
+.lang-bn body {
+  font-family: var(--font-baloo), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.lang-bn,
+.lang-bn * {
+  font-family: var(--font-baloo), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Ensure headings in Bangla look clean and balanced */
+.lang-bn h1,
+.lang-bn h2,
+.lang-bn h3,
+.lang-bn h4,
+.lang-bn h5,
+.lang-bn h6 {
+  font-family: var(--font-baloo), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+}
+
+.lang-bn .font-black,
+.lang-bn .font-extrabold {
+  font-weight: 800 !important;
+}
+
+.lang-bn .font-bold {
+  font-weight: 700 !important;
+}
+
+.lang-bn .font-semibold {
+  font-weight: 600 !important;
+}
+
+.lang-bn h1,
+.lang-bn h2,
+.lang-bn h3 {
+  line-height: 1.3;
+}
+
+.lang-bn .tracking-widest,
+.lang-bn .tracking-\[0\.2em\],
+.lang-bn .tracking-\[0\.3em\],
+.lang-bn .tracking-\[0\.4em\] {
+  letter-spacing: 0.05em !important;
+  /* Soften wide tracking for Bangla */
+}
+
+.blueprint-grid {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--text) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Custom Utilities */
+.card-shadow {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 7s ease-in-out infinite 1s;
+}
+
+.glass-premium {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-premium {
+  background: rgba(15, 23, 42, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
